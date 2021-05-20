@@ -1,0 +1,24 @@
+https://github.com/Karthic17/VPROPEL-POD/blob/main/Images/Pair%20of%20rabbits%20in%20field.png -> Question link
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,m,i,a[50];
+    cin>>n>>m;
+    a[0]=1;
+    a[1]=1;
+    for(i=2;i<m;i++)
+    {
+        a[i]=a[i-1]+a[i-2];
+    }
+    for(i=n;i>=1;i--)
+    {
+        if((a[m-1]*i)%3==0)
+        {
+            cout<<i<<' '<<a[m-1]*i<<endl;
+            break;
+        }
+    }
+    return 0;
+}
