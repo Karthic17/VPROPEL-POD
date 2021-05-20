@@ -1,0 +1,49 @@
+https://github.com/Karthic17/VPROPEL-POD/blob/main/Images/Longest%20vertical%20line.jpg -> Question link
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,max,x1,y1,y2,c=0;
+    cin>>n;
+    int x[n],y[n];
+    for (int i=0;i<n;i++)
+    cin>>x[i]>>y[i];
+    max=abs(y[1]-y[0]);
+    for (int i=0;i<n;i++){
+        for (int j=i+1;j<n;j++){
+            if (x[i]==x[j])
+            {
+                if (abs(y[j]-y[i])>max){
+                max=abs(y[j]-y[i]);
+            }
+        }
+    }
+    }
+    for (int i=0;i<n;i++){
+        for (int j=i+1;j<n;j++){
+            if (abs(y[j]-y[i])==max){
+                if (y[j]>y[i]){
+                    x1=x[i];
+                    y1=y[i];
+                    y2=y[j];
+                }
+                else{
+                    x1=x[i];
+                    y1=y[j];
+                    y2=y[i];
+                }
+            }
+        }
+    }
+    for (int i=0;i<n;i++){
+        if (x[i]==x1){
+            if (y1<=y[i] && y2>=y[i])
+            c++;
+        }
+    }
+    cout<<x1<<' '<<y1<<endl;
+    cout<<x1<<' '<<y2<<endl;
+    cout<<max<<endl;
+    cout<<c;
+}
