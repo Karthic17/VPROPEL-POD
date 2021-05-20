@@ -1,4 +1,7 @@
 https://github.com/Karthic17/VPROPEL-POD/blob/main/Images/Weigh%20the%20vegetables.jpg -> Question link
+Output Format
+Print 1 for weights that can be exactly weighed and 0 otherwise.
+
 
 #include<iostream>
 using namespace std;
