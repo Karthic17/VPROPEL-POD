@@ -1,0 +1,44 @@
+https://github.com/Karthic17/VPROPEL-POD/blob/main/Images/Power%20related%20number.jpg -> Question link
+
+#include<iostream>
+#include<math.h>
+using namespace std;
+int sum (long x)
+{
+    long a=0,b;
+    while (x>0)
+    {
+        b=x%10;
+        a=a+b;
+        x=x/10;
+    }
+    return a;
+}
+int main()
+{
+    long l,p,u,x,min,max,max1,min1,a,g,s,t;
+    cin>>l>>u>>p;
+    min=u;
+    max=l;
+    max1=2;
+    min1=p;
+    for (a=l;a<=u;a++){
+        for (g=2;g<=p;g++){
+            x=pow(a,g);
+            if (sum(x)==a){
+                if (min>a){
+                    min=a;
+                    min1=g;
+                }
+                if (a>max){
+                    max=a;
+                    max1=g;
+                }
+            }
+        }
+    }
+    s=pow(min,min1);
+    t=pow(max,max1);
+    cout<<min<<" "<<min1<<" "<<s<<endl;
+    cout<<max<<" "<<max1<<" "<<t;
+}
