@@ -1,0 +1,32 @@
+Images/varied distance relay race.jpg
+#include<iostream>
+using namespace std;
+struct relay
+{
+    int cap;
+};
+typedef struct relay relay;
+int main()
+{
+    int x,n,c=0;
+    cin>>x;
+    cin>>n;
+    relay rel[n];
+    for (int i=1;i<=n;i++)
+    cin>>rel[i].cap;
+    for (int i=1;i<=n;i++){
+        for (int j=i+1;j<n;j++){
+            for (int k=j+1;k<n;k++){
+                for (int l=k+1;l<n;l++){
+                    if (rel[i].cap+rel[j].cap+rel[k].cap+rel[l].cap==x){
+                    c++;
+                    printf("%d %d %d %d \n",i,j,k,l);
+                    return 0;
+                    }
+                }
+            }
+        }
+    }
+    if (c==0)
+    printf("No");
+}
