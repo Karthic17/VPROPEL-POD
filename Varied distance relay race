@@ -1,4 +1,4 @@
-Images/varied distance relay race.jpg
+
 #include<iostream>
 using namespace std;
 struct relay
